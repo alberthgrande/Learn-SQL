@@ -1,11 +1,13 @@
 <?php
+    
+    // connection database
+    include('connection.php');
 
+    // sql statement order by several column 
+    $sql = "SELECT * FROM `Customers` ORDER BY `Country`, `CustomerName` ";
+    $return = $conn->query($sql);
 
-    include("connection.php");
-
-    $slqAnd = "SELECT * FROM `Customers` WHERE `Country`='Mexico' AND `City`='Mexico D.F.' ";
-    $return = $conn->query($slqAnd);
-
+    // condition
     if($return->num_rows > 0) {
         echo "
         <table border=1>
@@ -21,8 +23,9 @@
             </tr>
         </thead>
         ";
-        while($row = $return->fetch_assoc()) {
-            echo "
+        // loop
+       while($row = $return->fetch_assoc()) {
+        echo "
             
             <tbody>
                 <tr>
@@ -37,7 +40,7 @@
             </tbody>
           
             ";
-        }
-        echo "</table>";
+       }
+       echo "</table>";
     }
 ?>

@@ -1,10 +1,10 @@
 <?php
+    // connection database
+    include('connection.php');
 
-
-    include("connection.php");
-
-    $slqAnd = "SELECT * FROM `Customers` WHERE `Country`='Mexico' AND `City`='Mexico D.F.' ";
-    $return = $conn->query($slqAnd);
+    // sql statement order by
+    $sql = "SELECT * FROM `Customers` ORDER BY `CustomerName`";
+    $return = $conn->query($sql);
 
     if($return->num_rows > 0) {
         echo "
@@ -28,7 +28,6 @@
                 <tr>
                     <td>$row[CustomerID]</td>
                     <td>$row[CustomerName]</td>
-                    <td>$row[ContactName]</td>
                     <td>$row[Address]</td>
                     <td>$row[City]</td>
                     <td>$row[PostalCode]</td>

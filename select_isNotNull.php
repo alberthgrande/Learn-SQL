@@ -1,10 +1,11 @@
 <?php
+    error_reporting(0);
+    // connection database
+    include('connection.php');
 
-
-    include("connection.php");
-
-    $slqAnd = "SELECT * FROM `Customers` WHERE `Country`='Mexico' AND `City`='Mexico D.F.' ";
-    $return = $conn->query($slqAnd);
+    // sql statement
+    $sql = "SELECT `CustomerName`,`ContactName`,`Address` FROM `customers` WHERE `Address` IS NOT NULL";
+    $return = $conn->query($sql);
 
     if($return->num_rows > 0) {
         echo "

@@ -15,24 +15,26 @@
             <tr>
                 <th>CustomerID</th>
                 <th>CustomerName</th>
+                <th>ContactName</th>
                 <th>Address</th>
                 <th>City</th>
                 <th>PostalCode</th>
                 <th>Country</th>
             </tr>
         </thead>
-    ";
+        ";
         while($sqlRow = $returnSql->fetch_assoc()) {
             echo "
             
             <tbody>
                 <tr>
-                    <td>$sqlRow[CustomerID]</td>
-                    <td>$sqlRow[CustomerName]</td>
-                    <td>$sqlRow[Address]</td>
-                    <td>$sqlRow[City]</td>
-                    <td>$sqlRow[PostalCode]</td>
-                    <td>$sqlRow[Country]</td>
+                    <td>$row[CustomerID]</td>
+                    <td>$row[CustomerName]</td>
+                    <td>$row[ContactName]</td>
+                    <td>$row[Address]</td>
+                    <td>$row[City]</td>
+                    <td>$row[PostalCode]</td>
+                    <td>$row[Country]</td>
                 </tr>
             </tbody>
           
