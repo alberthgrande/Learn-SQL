@@ -1,13 +1,13 @@
 <?php
+    
+    // connection data base
+    include('../connection.php');
 
-    // connection database
-    include('connection.php');
-
-    // sql statement
-    $sql = "SELECT `CustomerName`,`ContactName`,`Address` FROM `customers` WHERE `Address` IS NOT NULL";
+    // sql statement order by descending
+    $sql = "SELECT * FROM `Customers` ORDER BY `Country` DESC";
     $return = $conn->query($sql);
 
-    if($return->num_rows > 0) {
+    if($return->num_rows) {
         echo "
         <table border=1>
         <thead>

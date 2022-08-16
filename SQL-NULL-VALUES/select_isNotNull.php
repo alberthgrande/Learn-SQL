@@ -1,7 +1,10 @@
 <?php
-    include('connection.php');
 
-    $sql = "SELECT * FROM `Customers` WHERE `Country`='Mexico' OR `City`='Lulea' ";
+    // connection database
+    include('../connection.php');
+
+    // sql statement
+    $sql = "SELECT `CustomerName`,`ContactName`,`Address` FROM `customers` WHERE `Address` IS NOT NULL";
     $return = $conn->query($sql);
 
     if($return->num_rows > 0) {

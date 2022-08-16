@@ -1,6 +1,6 @@
 <?php
     // connection
-    include('./connection.php');
+    include('../connection.php');
     $submit = $_POST['submit'];
     $customerName = $_POST['customerName'];
     $contactName = $_POST['contactName'];

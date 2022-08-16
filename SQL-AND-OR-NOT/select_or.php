@@ -1,9 +1,7 @@
 <?php
-    // connection database
-    include('connection.php');
+    include('../connection.php');
 
-    // sql statement order by
-    $sql = "SELECT * FROM `Customers` ORDER BY `CustomerName`";
+    $sql = "SELECT * FROM `Customers` WHERE `Country`='Mexico' OR `City`='Lulea' ";
     $return = $conn->query($sql);
 
     if($return->num_rows > 0) {
@@ -28,6 +26,7 @@
                 <tr>
                     <td>$row[CustomerID]</td>
                     <td>$row[CustomerName]</td>
+                    <td>$row[ContactName]</td>
                     <td>$row[Address]</td>
                     <td>$row[City]</td>
                     <td>$row[PostalCode]</td>

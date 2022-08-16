@@ -1,6 +1,6 @@
 <?php
     // connectio database
-    include("connection.php");
+    include("../connection.php");
 
     // sql statement
     // SELECT * FROM `Customers`, select all data from `Customers` table from database

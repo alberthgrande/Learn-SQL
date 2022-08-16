@@ -1,13 +1,12 @@
 <?php
-    
-    // connection data base
-    include('connection.php');
 
-    // sql statement order by descending
-    $sql = "SELECT * FROM `Customers` ORDER BY `Country` DESC";
-    $return = $conn->query($sql);
 
-    if($return->num_rows) {
+    include("../connection.php");
+
+    $slqAnd = "SELECT * FROM `Customers` WHERE `Country`='Mexico' AND `City`='Mexico D.F.' ";
+    $return = $conn->query($slqAnd);
+
+    if($return->num_rows > 0) {
         echo "
         <table border=1>
         <thead>

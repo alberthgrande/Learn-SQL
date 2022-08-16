@@ -1,6 +1,6 @@
 <?php
 
-    include('connection.php');
+    include('../connection.php');
 
     $sql = "SELECT * FROM `Customers` WHERE NOT `Country`='Mexico' ";
     $return = $conn->query($sql);

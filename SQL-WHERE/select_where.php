@@ -1,6 +1,6 @@
 <?php
     error_reporting(0);
-    include('connection.php');
+    include('../connection.php');
 
     // select where data from customers table
     $objSql = "SELECT `CustomerName`,`Address` FROM `Customers` WHERE `Country`='Mexico'";

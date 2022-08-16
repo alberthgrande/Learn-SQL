@@ -1,15 +1,12 @@
 <?php
-    
-    // connection database
-    include('connection.php');
+    error_reporting(0);
+    include('../connection.php');
 
-    // sql statement order by ascending and descending
-    // The order by from country is in ascending order
-    // while the customername is descending order
-    $sql = "SELECT * FROM `Customers` ORDER BY `Country` ASC, `CustomerName` DESC ";
+    // Select DISTINCT data from database
+    $sql = "SELECT DISTINCT `Country` FROM `Customers`";
     $return = $conn->query($sql);
 
-    // condition check
+    // check num_row if have the data
     if($return->num_rows > 0) {
         echo "
         <table border=1>
@@ -25,7 +22,6 @@
             </tr>
         </thead>
         ";
-        // loop
         while($row = $return->fetch_assoc()) {
             echo "
             
@@ -45,5 +41,4 @@
         }
         echo "</table>";
     }
-
 ?>

@@ -1,12 +1,13 @@
 <?php
-
+    
     // connection database
-    include('connection.php');
+    include('../connection.php');
 
-    // sql statement
-    $sql = "SELECT `CustomerName`,`ContactName`,`Address` FROM `customers` WHERE `Address` IS NULL ";
+    // sql statement order by several column 
+    $sql = "SELECT * FROM `Customers` ORDER BY `Country`, `CustomerName` ";
     $return = $conn->query($sql);
 
+    // condition
     if($return->num_rows > 0) {
         echo "
         <table border=1>
@@ -22,8 +23,9 @@
             </tr>
         </thead>
         ";
-        while($row = $return->fetch_assoc()) {
-            echo "
+        // loop
+       while($row = $return->fetch_assoc()) {
+        echo "
             
             <tbody>
                 <tr>
@@ -38,7 +40,7 @@
             </tbody>
           
             ";
-        }
-        echo "</table>";
+       }
+       echo "</table>";
     }
 ?>

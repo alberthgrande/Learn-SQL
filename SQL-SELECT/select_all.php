@@ -1,5 +1,5 @@
 <?php
-    include("connection.php");
+    include("../connection.php");
 
     // create select from database
     $objSql = "SELECT * FROM `customers`";
