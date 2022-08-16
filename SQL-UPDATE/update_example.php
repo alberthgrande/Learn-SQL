@@ -41,15 +41,15 @@
                     <td>$row[PostalCode]</td>
                     <td>$row[Country]</td>
                     <td>
-                        <a style='color: blue;'
+                        <button><a style='color: blue;'
                             href='update_multiple.php?updateID=$id'>
                             Update
-                        </a>
-                        <a style='color: red;'
-                            href='../SQL-DELETE/delete_table.php?deleteID=$id'
-                            onclick='deleteConfirmation()'>
+                        </a></button>
+                        <button style='color: red;'
+                            
+                            onclick='deleteConfirmation($id)'>
                             Delete
-                        </a>
+                        </button>
                     </td>
                 </tr>
             </tbody>
@@ -59,3 +59,13 @@
         echo "</table>";
     }
 ?>
+
+<script>
+    function deleteConfirmation(id){
+        if(confirm("Are you sure you want to delete this data?")) {
+            window.location.href='../SQL-DELETE/delete_table.php?deleteID=' + id;
+        } else {
+            return false;
+        }
+    }
+</script>
