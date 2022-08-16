@@ -42,7 +42,7 @@
                     <td>$row[Country]</td>
                     <td>
                         <button><a style='color: blue;'
-                            href='update_multiple.php?updateID=$id'>
+                            href='../SQL-UPDATE/update_multiple.php?updateID=$id'>
                             Update
                         </a></button>
                         <button style='color: red;'
