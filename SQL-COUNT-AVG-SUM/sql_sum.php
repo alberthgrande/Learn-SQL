@@ -1,7 +1,7 @@
 <?php
     include('../connection.php');
 
-    $sum = "SELECT SUM(`Price`) as SumPrice FROM `products`";
+    $sum = "SELECT SUM(`UnitPrice`) as SumPrice FROM `products`";
     $result = $conn->query($sum);
 
     if($result->num_rows > 0) {
