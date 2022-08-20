@@ -17,12 +17,15 @@
         <thead>
             <tr>
                 <th>CustomerID</th>
-                <th>CustomerName</th>
+                <th>ComanyName</th>
                 <th>ContactName</th>
                 <th>Address</th>
                 <th>City</th>
+                <th>Region</th>
                 <th>PostalCode</th>
                 <th>Country</th>
+                <th>Phone</th>
+                <th>Fax</th>
                 <th colspan='2'>Action</th>
             </tr>
         </thead>
@@ -34,23 +37,25 @@
             <tbody>
                 <tr>
                     <td>".$countID++."</td>
-                    <td>$row[CustomerName]</td>
+                    <td>$row[CompanyName]</td>
                     <td>$row[ContactName]</td>
                     <td>$row[Address]</td>
                     <td>$row[City]</td>
+                    <td>$row[Region]</td>
                     <td>$row[PostalCode]</td>
                     <td>$row[Country]</td>
+                    <td>$row[Phone]</td>
+                    <td>$row[Fax]</td>
                     <td>
                         <button><a style='color: blue;'
                             href='update_multiple.php?updateID=$id'>
                             Update
-                        </a></button>
-                        <button style='color: red;'
-                            
-                            onclick='deleteConfirmation($id)'>
+                        </a></button> " ?>
+                        <button style="color: red;"
+                            onclick="deleteConfirmation('<?=$id?>');">
                             Delete
                         </button>
-                    </td>
+                    <?php "</td>
                 </tr>
             </tbody>
           
@@ -60,12 +65,12 @@
     }
 ?>
 
-<script>
-    function deleteConfirmation(id){
-        if(confirm("Are you sure you want to delete this data?")) {
-            window.location.href='../SQL-DELETE/delete_table.php?deleteID=' + id;
-        } else {
-            return false;
-        }
+<script >
+    function deleteConfirmation(id) {
+    if (confirm("Are you sure you want to delete this data?")) {
+        window.location.href = '../SQL-DELETE/delete_table.php?deleteID=' + id;
+    } else {
+        return false;
     }
+}
 </script>

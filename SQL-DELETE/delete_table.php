@@ -6,10 +6,10 @@
 
         $sqlDelete = "DELETE FROM `customers` WHERE `CustomerID`='$id' ";
         $resultDelete = $conn->query($sqlDelete);
-        if($resultDelete) {
+        if($resultDelete == true) {
             header("Location: ../SQL-UPDATE/update_example.php");
         } else {
-            die(mysql_error($conn));
+            // die(mysql_error($conn));
         }
     }
 ?>

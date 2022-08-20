@@ -10,12 +10,15 @@
 
     if($selectReturn->num_rows > 0) {
         while($row = $selectReturn->fetch_assoc()) {
-            $customerName = $row['CustomerName'];
+            $companyName = $row['CompanyName'];
             $contactName = $row['ContactName'];
             $address = $row['Address'];
             $city = $row['City'];
+            $region = $row['Region'];
             $postalCode = $row['PostalCode'];
             $country = $row['Country'];
+            $phone = $row['Phone'];
+            $fax = $row['Fax'];
 
 ?>
         <!-- Start div continer -->
@@ -28,8 +31,8 @@
                             <td><input type="hidden" name="updateID" value="<?=$id; ?>"></td>
                         </tr>
                         <tr>
-                            <td><label for="updateform">CustomerName:</label></td>
-                            <td><input type="text" name="customerName" value="<?=$customerName; ?>"></td>
+                            <td><label for="updateform">CompanyName:</label></td>
+                            <td><input type="text" name="companyName" value="<?=$companyName; ?>"></td>
                         </tr>
                         <tr>
                             <td><label for="updateform">ContactName:</label></td>
@@ -44,12 +47,24 @@
                             <td><input type="text" name="city" value="<?=$city; ?>"></td>
                         </tr>
                         <tr>
+                            <td><label for="updateform">Region:</label></td>
+                            <td><input type="text" name="region" value="<?=$region; ?>"></td>
+                        </tr>
+                        <tr>
                             <td><label for="updateform">PostalCode:</label></td>
                             <td><input type="text" name="postalCode" value="<?=$postalCode; ?>"></td>
                         </tr>
                         <tr>
                             <td><label for="updateform">Country:</label></td>
                             <td><input type="text" name="country" value="<?=$country; ?>"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="updateform">Phone:</label></td>
+                            <td><input type="text" name="phone" value="<?=$phone; ?>"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="updateform">Fax:</label></td>
+                            <td><input type="text" name="fax" value="<?=$fax; ?>"></td>
                         </tr>
                         <tr>
                             <td></td>
