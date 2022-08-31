@@ -10,7 +10,7 @@
     if($result->num_rows > 0) {
         echo "
         <table border=1>
-        <thead>
+        <thead> 
             <tr>
                 <th>CustomerID</th>
                 <th>CompanyName</th>
